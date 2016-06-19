@@ -1,3 +1,9 @@
+django-wfs (0.1.0-1) any; urgency=medium
+
+  * Release django-wfs-0.1.0 to clazzes.org xpkg-1 repo.
+
+ -- Wolfgang Glas <wolfgang.glas@iteg.at>  Sun, 19 Jun 2016 14:14:38 +0200
+
 django-wfs (0.1.0-0) any; urgency=medium
 
   * New-style debian xpkg packaging for clazzes.org
