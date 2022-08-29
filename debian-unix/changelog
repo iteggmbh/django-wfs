@@ -1,3 +1,9 @@
+django-wfs (2.0.0-1) any; urgency=medium
+
+  * Reset cascade options to prior setting in order to avoid new migrastions.
+
+ -- Wolfgang Glas <wolfgang.glas@iteg.at>  Mon, 29 Aug 2022 14:18:55 +0200
+
 django-wfs (2.0.0-0) any; urgency=medium
 
   * Initial 2.0 release to deb.clazzes.org
