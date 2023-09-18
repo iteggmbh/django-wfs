@@ -1,3 +1,9 @@
+django-wfs (2.0.1-1) any; urgency=medium
+
+  * Add proper ID fileds for django-3.x
+
+ -- Wolfgang Glas <wolfgang.glas@iteg.at>  Mon, 18 Sep 2023 10:54:43 +0200
+
 django-wfs (2.0.0-1) any; urgency=medium
 
   * Reset cascade options to prior setting in order to avoid new migrastions.

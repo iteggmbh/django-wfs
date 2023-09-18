@@ -21,6 +21,7 @@ def split_comma_separated(value):
   
 
 class Service(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=254)
     title = models.CharField(max_length=254)
     keywords = models.CharField(null=True, blank=True, max_length=254, help_text='Comma separated list of keywords.')
@@ -53,6 +54,7 @@ class Service(models.Model):
 
 
 class FeatureType(models.Model):
+    id = models.AutoField(primary_key=True)
     service = models.ForeignKey(Service,on_delete=models.CASCADE)
     name = models.CharField(max_length=254,unique=True)
     title = models.CharField(null=True, blank=True, max_length=254)
@@ -103,6 +105,7 @@ class FeatureType(models.Model):
         return field and hasattr(field, "geom_type")
 
 class MetadataURL(models.Model):
+    id = models.AutoField(primary_key=True)
     featuretype = models.ForeignKey(FeatureType,on_delete=models.CASCADE)
     url = models.URLField()
 
@@ -111,6 +114,7 @@ class MetadataURL(models.Model):
 
 
 class BoundingBox(models.Model):
+    id = models.AutoField(primary_key=True)
     featuretype = models.ForeignKey(FeatureType,on_delete=models.CASCADE)
     minx = models.CharField(max_length=254)
     miny = models.CharField(max_length=254)
@@ -121,6 +125,7 @@ class BoundingBox(models.Model):
         return "((" + self.minx + ", " + self.miny + "), (" + self.maxx + ", " + self.maxy + "))"
 
 class ResolutionFilter(models.Model):
+    id = models.AutoField(primary_key=True)
     featuretype = models.ForeignKey(FeatureType,on_delete=models.CASCADE)
     min_resolution = models.FloatField(help_text="The minimal resolution at which to apply the additional query filter.",db_index=True)
     query = models.TextField(default="{}", help_text="JSON containing the query to be passed to a Django queryset .filter()")
