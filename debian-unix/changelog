@@ -1,3 +1,9 @@
+django-wfs (2.0.2-0beta1) any; urgency=medium
+
+  * Avoid NPEs with RawFeature with null geometries.
+
+ -- Wolfgang Glas <wolfgang.glas@iteg.at>  Sun, 17 Mar 2024 20:28:23 +0100
+
 django-wfs (2.0.1-1) any; urgency=medium
 
   * Add proper ID fileds for django-3.x

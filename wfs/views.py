@@ -178,7 +178,11 @@ class type_feature_iter:
             
             if ftype.model is None:
                 for feature in feature_iter:
-                    yield ftype,RawFeature(feature_iter.description,feature,self.srid)
+                    rf = RawFeature(feature_iter.description,feature,self.srid)
+                    if rf.geometry is None:
+                        log.warning("Feature with ID [%s.%s] has no geometry."%(ftype.name,rf.id))
+                    else:
+                        yield ftype,RawFeature(feature_iter.description,feature,self.srid)
             else:
                 for feature in feature_iter:
                     if self.raw:
@@ -219,13 +223,15 @@ class RawFeature:
         
         for i,colinfo in enumerate(colinfos):
             if _is_geom_column(colinfo):
+                geojson = row[i]
+
+                if geojson is not None:
+                    geom = GEOSGeometry(row[i])
+
+                    if srid is not None and srid != geom.srid:
+                        geom.transform(srid)
                 
-                geom = GEOSGeometry(row[i])
-                
-                if srid is not None and srid != geom.srid:
-                    geom.transform(srid)
-                
-                self.geometry = geom
+                    self.geometry = geom
                     
             else:
                 if _is_id_column(colinfo):
