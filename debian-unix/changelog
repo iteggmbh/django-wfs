@@ -1,3 +1,9 @@
+django-wfs (2.0.2-1) any; urgency=medium
+
+  * Release RawGeometry NPE fix to production repos.
+
+ -- Wolfgang Glas <wolfgang.glas@iteg.at>  Mon, 18 Mar 2024 08:57:29 +0100
+
 django-wfs (2.0.2-0beta1) any; urgency=medium
 
   * Avoid NPEs with RawFeature with null geometries.
