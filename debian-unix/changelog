@@ -1,3 +1,10 @@
+django-wfs (2.0.3-0) any; urgency=medium
+
+  * Compatibility with Django 4.x from Debian 13 Trixie 
+    hopefully without breaking Django 3.2 from Debian 12 Bookworm
+
+ -- Christoph Lechleitner (ITEG) <christoph.lechleitner@iteg.at>  Fri, 03 Oct 2025 14:35:39 +0200
+
 django-wfs (2.0.2-1) any; urgency=medium
 
   * Release RawGeometry NPE fix to production repos.
