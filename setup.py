@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 import os
 import re
 
@@ -17,7 +17,7 @@ def read_version():
 
 setup(
     name=PACKAGE,
-    packages=find_packages(),
+    packages=find_namespace_packages(),
     include_package_data=True,
     package_dir={'wfs': 'wfs'},
     version=read_version(),
